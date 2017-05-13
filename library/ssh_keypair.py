@@ -72,10 +72,17 @@ def main():
                 or not os.path.isfile(pemfile):
             with open(pemfile, 'w') as pem:
                 pem.write(out['result']['priv'])
+        else:
+            with open(pemfile, 'r') as pem:
+                out['result']['priv'] = pem.read()
+
         if mod.params.get('overwrite') and os.path.isfile(pubfile)\
                 or not os.path.isfile(pubfile):
-            with open(basefile + '.pub', 'w') as pub:
+            with open(pubfile, 'w') as pub:
                 pub.write(out['result']['pub'])
+        else:
+            with open(pubfile, 'r') as pub:
+                out['result']['pub'] = pub.read()
 
     mod.exit_json(**out)
 
