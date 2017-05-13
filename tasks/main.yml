@@ -1,0 +1,8 @@
+---
+
+- name: Generate keypair
+  ssh_keypair:
+    curve: "{{ ssh_keys_curve }}"
+    base_name: "{{ ssh_keys_name }}"
+    output_path: "{{ ssh_keys_output_path }}"
+    overwrite: "{{ ssh_keys_overwrite }}"
