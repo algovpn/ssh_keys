@@ -83,6 +83,7 @@ def main():
         else:
             with open(pubfile, 'r') as pub:
                 out['result']['pub'] = pub.read()
+        os.chmod(pemfile, 0600)
 
     mod.exit_json(**out)
 
