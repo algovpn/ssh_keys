@@ -1,5 +1,6 @@
 ---
 # defaults file for ssh_keys
 
+ssh_keys_name: algo
 ssh_keys_curve: 'prime256v1'
 ssh_keys_overwrite: false
